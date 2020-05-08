@@ -1,0 +1,11 @@
+[Unit]
+Description=RGBW_MQTT_home_assistant
+Wants=network.target mosquitto.service
+After=network.target mosquitto.service
+
+[Service]
+ExecStart=/home/pi/RGBW_MQTT_home_assistant/app.py
+Restart=always
+
+[Install]
+WantedBy=default.target
