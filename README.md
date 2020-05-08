@@ -22,7 +22,7 @@ sudo apt install git -y
 ```
 chmod +x script
 time yes | sudo ./script
-git clone https://github.com/sybren-marechal/RGBW_MQTT_home_assistant.git 
+git clone https://github.com/sybren-marechal/Digital_Led_Strip_MQTT.git
 rm -f script
 ```
 
@@ -34,6 +34,11 @@ MQTT_BROKER = ""   # Ip adress of the MQTT Broker
 MQTT_USERNAME = ""        # Username
 MQTT_PASSWD = ""       # Password
 MQTT_TOPIC = ""   # MQTT Topic
+
+## setup RGB
+
+NUMBER_OF_LEDS= 100   #int
+
 ```
 
 ## home Assistant
@@ -63,5 +68,5 @@ cp service.service /etc/systemd/system
 systemctl enable service.service
 systemctl start service.service
 ```
-
+ 
 to stop the service use `systemctl stop service.service`
