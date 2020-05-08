@@ -1,10 +1,10 @@
 [Unit]
-Description=RGBW_MQTT_home_assistant
+Description=Digital_Led_Strip_MQTT
 Wants=network.target mosquitto.service
 After=network.target mosquitto.service
 
 [Service]
-ExecStart=/home/pi/RGBW_MQTT_home_assistant/app.py
+ExecStart=/home/pi/Digital_Led_Strip_MQTT/app.py
 Restart=always
 
 [Install]
