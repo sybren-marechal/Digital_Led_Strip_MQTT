@@ -89,7 +89,7 @@ if __name__ == '__main__':
     client.on_message = on_message
     client.connect(MQTT_BROKER,1883,60)
     client.username_pw_set(username=MQTT_USERNAME,password=MQTT_PASSWD)
-    publish.single("Boot", "Hello World", hostname=MQTT_BROKER ,auth={'username':MQTT_USERNAME,'password':MQTT_PASSWD})
+    publish.single("Boot", MQTT_TOPIC, hostname=MQTT_BROKER ,auth={'username':MQTT_USERNAME,'password':MQTT_PASSWD})
     client.loop_start()
 
     justoutofloop = False
