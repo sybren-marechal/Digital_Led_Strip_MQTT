@@ -13,26 +13,26 @@ class Led:
     def __init__(self, PIXEL_PIN, NUM_PIXELS, BRIGHTNESS):
         self.pixel_pin = PIXEL_PIN
         self.num_pixels = NUM_PIXELS
-        self.order = neopixel.RGB
-        #self.order = neopixel.RGBW
+        #self.order = neopixel.RGB
+        self.order = neopixel.RGBW
         self.brightness = BRIGHTNESS
         self.pixels = neopixel.NeoPixel(self.pixel_pin, self.num_pixels, brightness=self.brightness, auto_write=False,
                                         pixel_order=self.order)
                                         
     def set_color(self,r,g,b):
-        self.pixels.fill((r, g, b))
+        self.pixels.fill((r, g, b,0))
         self.pixels.show()
         time.sleep(1)
 
     def all_on(self):
-        self.pixels.fill((255, 255, 255))
-        #self.pixels.fill((255, 255, 255, 255))
+        #self.pixels.fill((255, 255, 255))
+        self.pixels.fill((255, 255, 255, 255))
         self.pixels.show()
         time.sleep(1)
 
     def all_off(self):
-        self.pixels.fill((0, 0, 0))
-        #self.pixels.fill((0, 0, 0, 0))
+        #self.pixels.fill((0, 0, 0))
+        self.pixels.fill((0, 0, 0, 0))
         self.pixels.show()
         time.sleep(1)
 
@@ -87,14 +87,14 @@ class Led:
                 # print (pixel_index1)
                 # print (pixel_index2)
                 # print ("samen", pixel_index2 + pixel_index1)
-                self.pixels[int(pixel_index1)] = (255,255,255)
-                self.pixels[int(pixel_index2)] = (255,255,255)
-                self.pixels[int(pixel_index3)] = (255,255,255)
-                self.pixels[int(pixel_index4)] = (255,255,255)
-                self.pixels[int(pixel_index1)+pixel_length] = (0,0,0)
-                self.pixels[int(pixel_index2)-pixel_length] = (0,0,0)
-                self.pixels[int(pixel_index3)+pixel_length] = (0,0,0)
-                self.pixels[int(pixel_index4)-pixel_length] = (0,0,0)
+                self.pixels[int(pixel_index1)] = (255,255,255,255)
+                self.pixels[int(pixel_index2)] = (255,255,255,255)
+                self.pixels[int(pixel_index3)] = (255,255,255,255)
+                self.pixels[int(pixel_index4)] = (255,255,255,255)
+                self.pixels[int(pixel_index1)+pixel_length] = (0,0,0,0)
+                self.pixels[int(pixel_index2)-pixel_length] = (0,0,0,0)
+                self.pixels[int(pixel_index3)+pixel_length] = (0,0,0,0)
+                self.pixels[int(pixel_index4)-pixel_length] = (0,0,0,0)
 
                 self.pixels.show()
                 time.sleep(0.1)
