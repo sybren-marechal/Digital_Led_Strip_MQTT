@@ -17,13 +17,13 @@ sudo pip3 install adafruit-circuitpython-neopixel
 sudo pip3 install jsonschema 
 sudo pip3 install paho-mqtt 
 sudo apt install git -y
+git clone https://github.com/sybren-marechal/Digital_Led_Strip_MQTT.git
+rm -f script
 ```
 
 ```
 chmod +x script
 time yes | sudo ./script
-git clone https://github.com/sybren-marechal/Digital_Led_Strip_MQTT.git
-rm -f script
 ```
 
 ## setup
